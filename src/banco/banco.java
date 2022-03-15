@@ -13,40 +13,38 @@ public class banco {
 
     contaSalario[] conta;
     poupanca[] poupanca;
-    int numConta = 1;
-    int numpoupanca = 1;
+    int numConta ;
+    int numpoupanca;
+    //contaSalario c1;
 
-    public contaSalario[] getConta() {
-        return conta;
-    }
-
-    public void setConta(contaSalario[] conta) {
-        this.conta = conta;
-    }
-
-    public poupanca[] getPoupanca() {
-        return poupanca;
-    }
-
-    public void setPoupanca(poupanca[] poupanca) {
-        this.poupanca = poupanca;
-    }
+    /*public banco(contaSalario c1) {
+        this.c1 = c1;
+        c1.deposita();
+        c1.getSaldo();
+    }*/
 
     public void iniciabanco() {
         conta = new contaSalario[100];
         poupanca = new poupanca[100];
-
+        numConta = 1;
+        numpoupanca = 1;
     }
 
     public void abreconta() {
-        conta[numConta] = new contaSalario[100];
+        conta[numConta] = new contaSalario();
+        numConta ++;
     }
 
     public void abrepoupanca() {
-
+        poupanca[numpoupanca] = new poupanca ();
+        numpoupanca ++;
     }
 
     public void encerraconta() {
-
+        for (int i = 1; i >=100; i++){
+            conta[i] = null;
+            poupanca[i]= null;
+                    
+        }
     }
 }
