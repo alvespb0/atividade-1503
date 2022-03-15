@@ -10,5 +10,41 @@ package banco;
  * @author IFSC
  */
 public class contaSalario {
-    
+    double saldo;
+    double movimentacao;
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public double getMovimentacao() {
+        return movimentacao;
+    }
+
+    public void setMovimentacao(double movimentacao) {
+        this.movimentacao = movimentacao;
+    }
+    public void deposita(){
+        
+        saldo += movimentacao;
+    }
+    public void saque (){
+        
+        saldo -= movimentacao;
+    }
+    public void extrato (){
+        System.out.println(""+saldo);
+    }
+
+    public contaSalario(double saldo, double movimentacao) {
+        this.saldo = saldo;
+        this.movimentacao = movimentacao;
+    }
+    public contaSalario (){
+        
+    }
 }
